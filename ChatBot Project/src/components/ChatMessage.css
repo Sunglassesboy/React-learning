@@ -1,0 +1,14 @@
+  .chat-message-time{
+      color: grey;
+      font-size: 12px;
+      
+    }
+
+     .chat-message-text {
+      background-color: rgb(233, 233, 233);
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin: 8px 10px;
+      max-width: 300px;
+    }
+

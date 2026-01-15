@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+    <style>
+      body{
+        background-color: black;
+        margin: 0px;
+      }
+
+      .button{
+        background-color: rgb(25, 135, 82);
+        color: white;
+        padding: 10px;
+        margin: 5px;
+      }
+
+      .dashboard{
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      function Section(){
+        const [clicks, setClicks] = React.useState(0);
+
+        const countButtonRef = React.useRef(null)
+
+        function incrementClick(){
+            setClicks(prev => prev + 1);
+        }
+        function resetClicks(){
+            setClicks(0);
+        }
+
+        function autoClicks(){
+            setInterval(() => {
+                 countButtonRef.current?.click();
+            }, 1000)
+           
+        }
+
+        function stopAuto(){
+            if (!timerRef.current) return;
+            clearInterval(timerRef.current);
+            timerRef.current = null;
+        }
+
+
+        return(
+            <div className='dashboard'>
+                <button
+                    ref={countButtonRef}
+                    onClick={incrementClick}
+                    type="button"
+                    className='button'
+                  >
+                    Clicked {clicks} times
+                </button>
+
+                <button  onClick={resetClicks}  className='button' 
+                     >reset
+                </button>
+
+                <button onClick={autoClicks}  className='button'
+                    >Auto Click
+                </button>
+
+                 <button type="button" onClick={stopAuto}>Stop Auto Click</button>
+            </div>
+        )
+      }
+
+      function App(){
+        return(
+            <Section />
+        )
+      }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

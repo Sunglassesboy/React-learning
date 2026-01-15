@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+    <style>
+        body{
+            font-family: Arial;
+        }
+
+        .form-heading{
+            font-size: 27px;
+        }
+
+        .form-input{
+            border-width: 2px;
+            border-radius: 5px;
+            margin: 4px 2px;
+            padding: 10px 20px;
+            width: 200px;
+        }
+
+        .btn{
+            background-color: rgb(0, 123, 255);
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+
+        }
+    </style>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+      function Form(){
+        const [showPassword, setShowPassword] = React.useState(true);
+
+        function passwordToggle(){
+          setShowPassword(!showPassword)
+        }
+
+        return(
+            <>
+                <p
+                  className='form-heading'
+                
+                >Hello, Welcome to my website</p>
+
+                <input 
+                    type="text" 
+                    placeholder="Email"
+                    className='form-input'
+                /> <br/>
+                <input 
+                    type={showPassword ? "text" : "password"} 
+                    placeholder="password"
+                    className='form-input'
+                /> 
+
+                <button
+                  onClick={passwordToggle}
+                >
+                 {showPassword ? "Hide" : "Show"}
+                
+                </button>
+                
+                <br/>
+
+                <button className='btn'>Login</button>
+                <button className='btn'>Sign Up</button>
+
+            </>
+        )
+      }  
+
+      function App(){
+        return(
+            <Form />
+        )
+
+      }  
+  
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

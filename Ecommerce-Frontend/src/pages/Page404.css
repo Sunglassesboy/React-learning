@@ -1,0 +1,23 @@
+.not-found-container {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.not-found-message {
+    font-size: 50px;
+    font-family: sans-serif;
+    color: aliceblue;
+    margin: 0;
+    padding: 0;
+}
