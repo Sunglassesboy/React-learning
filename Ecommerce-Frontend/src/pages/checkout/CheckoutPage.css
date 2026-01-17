@@ -74,6 +74,7 @@
   font-size: 19px;
   margin-top: 5px;
   margin-bottom: 22px;
+  text-align: left;
 }
 
 .checkout-page .cart-item-details-grid {
@@ -107,16 +108,23 @@
 .checkout-page .product-name {
   font-weight: 700;
   margin-bottom: 8px;
+  text-align: left;
 }
 
 .checkout-page .product-price {
 
   font-weight: 700;
   margin-bottom: 5px;
+  text-align: left;
 }
 
 .checkout-page .product-quantity .link-primary {
   margin-left: 3px;
+  
+}
+
+.product-quantity{
+  text-align: left;
 }
 
 @media (max-width: 1000px) {
